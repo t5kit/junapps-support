@@ -13,25 +13,75 @@
     body {
       font-family: sans-serif;
       line-height: 1.6;
-      max-width: 800px;
+      max-width: 1100px; /* ← 横に並べるので少し広げる */
       margin: 0 auto;
       padding: 2rem;
     }
+
     h1 {
       color: #333;
     }
+
     .app-section {
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
     }
+
     a {
       color: #0077cc;
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
+
+    /* ===== カードレイアウト ===== */
+    .app-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
     .app-list li {
-      margin-bottom: 0.2rem;
+      background: #f9f9f9;
+      border-radius: 12px;
+      padding: 16px;
+
+      display: flex;
+      flex-direction: column;   /* ← 追加：縦並び */
+      align-items: center;     /* ← 横方向を中央 */
+      text-align: center;     /* ← テキスト中央 */
+
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    }
+
+    .app-list img {
+      width: 70px;
+      height: 70px;
+      border-radius: 10px;
+      margin-bottom: 8px; /* ← 下に余白 */
+    }
+
+    .app-info {
+      flex: 1;
+    }
+
+    .app-info strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .app-links {
+      font-size: 0.75rem;
+    }
+
+    .app-links a {
+      margin-right: 6px;
     }
   </style>
 </head>
@@ -43,125 +93,164 @@
     <h2>📱 iOS Apps</h2>
     <ul class="app-list">
       <li>
-        <img src="./fig/nextis.png" style="width: 48px; height: 48px; vertical-align: middle; margin-right: 8px;" />
-        <strong>Next Is</strong> — 
-        <a href="./ios/nextis/index.html">Support Page</a> | 
-        <a href="./ios/nextis/privacypolicy.html">Privacy Policy</a>
+        <img src="./fig/nextis.png"/>
+        <strong class="app-title">Next Is</strong>
+        <div class="app-links">
+          ・<a href="./ios/nextis/index.html">Support Page</a><br>
+          ・<a href="./ios/nextis/privacypolicy.html">Privacy Policy</a>
+        </div>
       </li>
       <li>
-        <img src="./fig/roomscan.png" style="width: 48px; height: 48px; vertical-align: middle; margin-right: 8px;" />
-        <strong>Room Scan</strong> — 
-        <a href="./ios/roomscan/index.html">Support Page</a> | 
-        <a href="./ios/roomscan/privacypolicy.html">Privacy Policy</a>
+        <img src="./fig/roomscan.png"/>
+        <strong class="app-title">Room Scan</strong>
+        <div class="app-links">
+          ・<a href="./ios/roomscan/index.html">Support Page</a><br>
+          ・<a href="./ios/roomscan/privacypolicy.html">Privacy Policy</a>
+        </div>
       </li>
       <li>
-        <img src="./fig/headachelog.png" style="width: 48px; height: 48px; vertical-align: middle; margin-right: 8px;" />
-        <strong>Headache Log</strong> — 
-        <a href="./ios/headachelog/index.html">Support Page</a> | 
-        <a href="./ios/headachelog/privacypolicy.html">Privacy Policy</a>
+        <img src="./fig/headachelog.png"/>
+        <strong class="app-title">Headache Log</strong>
+        <div class="app-links">
+          ・<a href="./ios/headachelog/index.html">Support Page</a><br>
+          ・<a href="./ios/headachelog/privacypolicy.html">Privacy Policy</a>
+        </div>
       </li>
       <li>
-        <img src="./fig/minidiary.png" style="width: 48px; height: 48px; vertical-align: middle; margin-right: 8px;" />
-        <strong>Mini Diary</strong> — 
-        <a href="./ios/minidiary/index.html">Support Page</a> | 
-        <a href="./ios/minidiary/privacypolicy.html">Privacy Policy</a>
+        <img src="./fig/minidiary.png"/>
+        <strong class="app-title">Mini Diary</strong>
+        <div class="app-links">
+          ・<a href="./ios/minidiary/index.html">Support Page</a><br>
+          ・<a href="./ios/minidiary/privacypolicy.html">Privacy Policy</a>
+        </div>
       </li>
       <li>
-        <img src="./fig/armeasurenote.png" style="width: 48px; height: 48px; vertical-align: middle; margin-right: 8px;" />
-        <strong>AR Measure + Notes</strong> — 
-        <a href="./ios/armeasurenote/index.html">Support Page</a> | 
-        <a href="./ios/armeasurenote/privacypolicy.html">Privacy Policy</a>
+        <img src="./fig/armeasurenote.png" />
+        <strong class="app-title">AR Measure + Notes</strong>
+        <div class="app-links">
+          ・<a href="./ios/armeasurenote/index.html">Support Page</a><br>
+          ・<a href="./ios/armeasurenote/privacypolicy.html">Privacy Policy</a>
+        </div>
       </li>
       <li>
-        <img src="./fig/geometrycalc.png" style="width: 48px; height: 48px; vertical-align: middle; margin-right: 8px;" />
-        <strong>Geometry Calc</strong> — 
-        <a href="./ios/geometrycalc/index.html">Support Page</a> | 
-        <a href="./ios/geometrycalc/privacypolicy.html">Privacy Policy</a><!--  | 
-        <a href="./ios/geometrycalc/terms.html">Terms of Use</a> -->
+        <img src="./fig/geometrycalc.png" />
+        <strong class="app-title">Geometry Calc</strong>
+        <div class="app-links">
+          ・<a href="./ios/geometrycalc/index.html">Support Page</a><br>
+          ・<a href="./ios/geometrycalc/privacypolicy.html">Privacy Policy</a>
+        </div>
       </li>
       <li>
-        <img src="./fig/flagandcapitalquiz.png" style="width: 48px; height: 48px; vertical-align: middle; margin-right: 8px;" />
-        <strong>Flags & Capital Quiz</strong> — 
-        <a href="./ios/flagandcapitalquiz/index.html">Support Page</a> | 
-        <a href="./ios/flagandcapitalquiz/privacypolicy.html">Privacy Policy</a>
+        <img src="./fig/flagandcapitalquiz.png" />
+        <strong class="app-title">Flags & Capital Quiz</strong>
+        <div class="app-links">
+          ・<a href="./ios/flagandcapitalquiz/index.html">Support Page</a><br>
+          ・<a href="./ios/flagandcapitalquiz/privacypolicy.html">Privacy Policy</a>
+        </div>
       </li>
       <li>
-        <img src="./fig/simpleenglishvocabulary.png" style="width: 48px; height: 48px; vertical-align: middle; margin-right: 8px;" />
-        <strong>小学英単語</strong> — 
-        <a href="./ios/simpleenglishvocabulary/index.html">サポートページ</a> | 
-        <a href="./ios/simpleenglishvocabulary/privacypolicy.html">プライバシーポリシー</a>
+        <img src="./fig/simpleenglishvocabulary.png" />
+        <strong class="app-title">小学英単語</strong>
+        <div class="app-links">
+          ・<a href="./ios/simpleenglishvocabulary/index.html">Support Page</a><br>
+          ・<a href="./ios/simpleenglishvocabulary/privacypolicy.html">Privacy Policy</a>
+        </div>
       </li>
       <li>
-        <img src="./fig/hajimetesansuu.png" style="width: 48px; height: 48px; vertical-align: middle; margin-right: 8px;" />
-        <strong>First Math</strong> — 
-        <a href="./ios/hajimetesansuu/index.html">Support Page</a> | 
-        <a href="./ios/hajimetesansuu/privacypolicy.html">Privacy Policy</a>
+        <img src="./fig/hajimetesansuu.png" />
+        <strong class="app-title">First Math</strong>
+        <div class="app-links">
+          ・<a href="./ios/hajimetesansuu/index.html">Support Page</a><br>
+          ・<a href="./ios/hajimetesansuu/privacypolicy.html">Privacy Policy</a>
+        </div>
       </li>
       <li>
-        <img src="./fig/kukumaster.png" style="width: 48px; height: 48px; vertical-align: middle; margin-right: 8px;" />
-        <strong>Kuku Master</strong> — 
-        <a href="./ios/kukumaster/index.html">Support Page</a> | 
-        <a href="./ios/kukumaster/privacypolicy.html">Privacy Policy</a>
+        <img src="./fig/kukumaster.png" />
+        <strong class="app-title">Kuku Master</strong>
+        <div class="app-links">
+          ・<a href="./ios/kukumaster/index.html">Support Page</a><br>
+          ・<a href="./ios/kukumaster/privacypolicy.html">Privacy Policy</a>
+        </div>
       </li>
       <li>
-        <img src="./fig/foodfacts.png" style="width: 48px; height: 48px; vertical-align: middle; margin-right: 8px;" />
-        <strong>Food Facts</strong> — 
-        <a href="./ios/foodfacts/index.html">Support Page</a> | 
-        <a href="./ios/foodfacts/privacypolicy.html">Privacy Policy</a>
+        <img src="./fig/foodfacts.png" />
+        <strong class="app-title">Food Facts</strong>
+        <div class="app-links">
+          ・<a href="./ios/foodfacts/index.html">Support Page</a><br>
+          ・<a href="./ios/foodfacts/privacypolicy.html">Privacy Policy</a>
+        </div>
       </li>
       <li>
-        <img src="./fig/fishkanjiquiz.png" style="width: 48px; height: 48px; vertical-align: middle; margin-right: 8px;" />
-        <strong>さかな漢字クイズ</strong> — 
-        <a href="./ios/fishkanjiquiz/index.html">サポートページ</a> | 
-        <a href="./ios/fishkanjiquiz/privacypolicy.html">プライバシーポリシー</a>
+        <img src="./fig/fishkanjiquiz.png" />
+        <strong class="app-title">さかな漢字クイズ</strong>
+        <div class="app-links">
+          ・<a href="./ios/fishkanjiquiz/index.html">Support Page</a><br>
+          ・<a href="./ios/fishkanjiquiz/privacypolicy.html">Privacy Policy</a>
+        </div>
       </li>
       <li>
-        <img src="./fig/structuralformulasstudy.png" style="width: 48px; height: 48px; vertical-align: middle; margin-right: 8px;" />
-        <strong>Structural Formulas Study</strong> — 
-        <a href="./ios/structuralformulasstudy/index.html">Support Page</a> | 
-        <a href="./ios/structuralformulasstudy/privacypolicy.html">Privacy Policy</a>
+        <img src="./fig/structuralformulasstudy.png" />
+        <strong class="app-title">Structural Formulas Study</strong>
+        <div class="app-links">
+          ・<a href="./ios/structuralformulasstudy/index.html">Support Page</a><br>
+          ・<a href="./ios/structuralformulasstudy/privacypolicy.html">Privacy Policy</a>
+        </div>
       </li>
       <li>
-        <img src="./fig/animaltest.png" style="width: 48px; height: 48px; vertical-align: middle; margin-right: 8px;" />
-        <strong>Animal Test</strong> — 
-        <a href="./ios/animaltest/index.html">Support Page</a> | 
-        <a href="./ios/animaltest/privacypolicy.html">Privacy Policy</a>
+        <img src="./fig/animaltest.png" />
+        <strong>Animal Test</strong>
+        <div class="app-links">
+          ・<a href="./ios/animaltest/index.html">Support Page</a><br>
+          ・<a href="./ios/animaltest/privacypolicy.html">Privacy Policy</a>
+        </div>
       </li>
       <li>
-        <img src="./fig/offlineflags.png" style="width: 48px; height: 48px; vertical-align: middle; margin-right: 8px;" />
-        <strong>World Flags & Facts</strong> — 
-        <a href="./ios/offlineflags/index.html">Support Page</a> | 
-        <a href="./ios/offlineflags/privacypolicy.html">Privacy Policy</a>
+        <img src="./fig/offlineflags.png" />
+        <strong>World Flags & Facts</strong>
+        <div class="app-links">
+          ・<a href="./ios/offlineflags/index.html">Support Page</a><br>
+          ・<a href="./ios/offlineflags/privacypolicy.html">Privacy Policy</a>
+        </div>
       </li>
       <li>
-        <img src="./fig/screwpitchgauge.png" style="width: 48px; height: 48px; vertical-align: middle; margin-right: 8px;" />
-        <strong>Screw Pitch Gauge</strong> — 
-        <a href="./ios/screwpitchgauge/index.html">Support Page</a> | 
-        <a href="./ios/screwpitchgauge/privacypolicy.html">Privacy Policy</a>
+        <img src="./fig/screwpitchgauge.png" />
+        <strong>Screw Pitch Gauge</strong>
+        <div class="app-links">
+          ・<a href="./ios/screwpitchgauge/index.html">Support Page</a><br>
+          ・<a href="./ios/screwpitchgauge/privacypolicy.html">Privacy Policy</a>
+        </div>
       </li>
       <li>
-        <img src="./fig/caliper.png" style="width: 48px; height: 48px; vertical-align: middle; margin-right: 8px;" />
-        <strong>Caliper & Ruler</strong> — 
-        <a href="./ios/caliper/index.html">Support Page</a> | 
-        <a href="./ios/caliper/privacypolicy.html">Privacy Policy</a>
+        <img src="./fig/caliper.png" />
+        <strong>Caliper & Ruler</strong>
+        <div class="app-links">
+          ・<a href="./ios/caliper/index.html">Support Page</a><br>
+          ・<a href="./ios/caliper/privacypolicy.html">Privacy Policy</a>
+        </div>
       </li>
       <li>
-        <img src="./fig/japaneseera.png" style="width: 48px; height: 48px; vertical-align: middle; margin-right: 8px;" />
-        <strong>Japanese Era</strong> — 
-        <a href="./ios/japaneseera/index.html">Support Page</a> | 
-        <a href="./ios/japaneseera/privacypolicy.html">Privacy Policy</a>
+        <img src="./fig/japaneseera.png" />
+        <strong>Japanese Era</strong>
+        <div class="app-links">
+          ・<a href="./ios/japaneseera/index.html">Support Page</a><br>
+          ・<a href="./ios/japaneseera/privacypolicy.html">Privacy Policy</a>
+        </div>
       </li>
       <li>
-        <img src="./fig/colorlens.png" style="width: 48px; height: 48px; vertical-align: middle; margin-right: 8px;" />
-        <strong>Color Lens</strong> — 
-        <a href="./ios/colorlens/index.html">Support Page</a> | 
-        <a href="./ios/colorlens/privacypolicy.html">Privacy Policy</a>
+        <img src="./fig/colorlens.png" />
+        <strong>Color Lens</strong>
+        <div class="app-links">
+          ・<a href="./ios/colorlens/index.html">Support Page</a><br>
+          ・<a href="./ios/colorlens/privacypolicy.html">Privacy Policy</a>
+        </div>
       </li>
       <li>
-        <img src="./fig/protractor.png" style="width: 48px; height: 48px; vertical-align: middle; margin-right: 8px;" />
-        <strong>Smart Protractor</strong> — 
-        <a href="./ios/protractor/index.html">Support Page</a> | 
-        <a href="./ios/protractor/privacypolicy.html">Privacy Policy</a>
+        <img src="./fig/protractor.png" />
+        <strong>Smart Protractor</strong>
+        <div class="app-links">
+          ・<a href="./ios/protractor/index.html">Support Page</a><br>
+          ・<a href="./ios/protractor/privacypolicy.html">Privacy Policy</a>
+        </div>
       </li>
     </ul>
   </div>
@@ -170,10 +259,12 @@
     <h2>🤖 Android Apps</h2>
     <ul class="app-list">
       <li>
-        <img src="./fig/protractor.png" style="width: 48px; height: 48px; vertical-align: middle; margin-right: 8px;" />
-        <strong>Digital Protractor</strong> — 
-        <a href="./android/protractor/index.html">Support Page</a> | 
-        <a href="./android/protractor/privacypolicy.html">Privacy Policy</a>
+        <img src="./fig/protractor.png" />
+        <strong>Digital Protractor</strong>
+        <div class="app-links">
+          ・<a href="./android/protractor/index.html">Support Page</a><br>
+          ・<a href="./android/protractor/privacypolicy.html">Privacy Policy</a>
+        </div>
       </li>
     </ul>
   </div>
